@@ -1,0 +1,99 @@
+.intro{
+    background-image : url("./imgs/bg-01.jpg");
+}
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+  @media (min-width: 992px) {
+    .rounded-lg-3 { border-radius: .3rem; }
+  }
+
+  .therapy-structure {
+    padding: 40px 0;
+  }
+  
+  .list-group-flush {
+    border: 1px solid #ffffff; 
+    border-radius: 5px; 
+    padding: 8px;
+  }
+  
+  .list-group-item {
+    list-style: none;
+  }
+
+  .registration-form {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd; 
+  }  
+
+  .therapy-benefits {
+    background-color: #f3e0d0;
+  }
+
+  .feature-box {
+    background-color: #fff;
+    padding: 1.5rem; 
+    width: 100%; 
+    text-align: center;
+  }
+
+  .feature-box i {
+    margin-bottom: 1rem;
+  }
+
+  .feature-box h4 {
+    font-size: 1.2rem; 
+  }
+
+  body{
+    background-color: #ede6e0c2 ;
+  }
+
+  #feedback2-more-toggle:hover{
+    cursor: pointer;
+  }
+
+  #feedback1-more-toggle:hover{
+    cursor: pointer;
+  }
+
+
+#foot{
+  background-color: rgb(29, 29, 29);
+  color: white;
+}
+
+.responsive-text {
+  font-size: 1rem;
+}
+@media (max-width: 1200px) {
+  .responsive-text {
+    font-size: 0.95rem; 
+  }
+}
+@media (max-width: 992px) {
+  .responsive-text {
+    font-size: 0.9rem; 
+  }
+}
+@media (max-width: 768px) {
+  .responsive-text {
+    font-size: 0.85rem; 
+  }
+}
+@media (max-width: 576px) {
+  .responsive-text {
+    font-size: 0.8rem; 
+  }
+}
+@media (max-width: 400px) {
+  .responsive-text {
+    font-size: 0.75rem; 
+  }
+}
