@@ -47,12 +47,30 @@ export class Service{
         }
     }
 
-    async updateAppointment( UserId , {Schedule_appointments}){
+    async create_feedback(   {UserId , Feedback } ){
+        try {
+            const a = await this.databases.createDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId_feedback,
+                ID.unique(),
+                {
+                UserId , 
+                Feedback
+                }
+            )
+            return a;
+            
+        } catch (error) {
+            console.log("Appwrite serive :: createdoc :: error", error);
+        }
+    }
+
+    async updateAppointment( {Schedule_appointments , AppointmentID}){
         try {
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId_appointments,
-                "66be0a66002fff516d51",
+                AppointmentID ,
                 {
                     Schedule_appointments
                 }
@@ -92,18 +110,60 @@ export class Service{
         }
     }
 
-    async get_appointments(){
+    async get_appointments(AppointmentID){
         try {
             const d =  await this.databases.getDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId_appointments,
-                "66be0a66002fff516d51"          
+                AppointmentID         
             )
             console.log(d);           
             return d;
         } catch (error) {
             console.log("Appwrite serive :: get_appointments :: error", error);
             return false
+        }
+    }
+
+    async get_appoint_data(name){
+
+        try {
+            const a = await this.databases.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId_appointments,
+                [Query.equal("UserId" , name.name )]
+            )
+            console.log(a);
+            console.log(a.documents[0].
+                $id
+                );
+            
+            return a.documents[0].
+            $id
+            ;            
+
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
+
+    async get_feedback_data(name){
+
+        try {
+            const a = await this.databases.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId_feedback,
+                [Query.equal("UserId" , name.name )]
+            )
+            console.log(a); 
+            console.log(a.documents[0].Feedback) 
+            
+            return String(a.documents[0].Feedback);
+
+        } catch (error) {
+            console.log(error);
+            
         }
     }
 
