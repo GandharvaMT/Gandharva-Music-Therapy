@@ -1,0 +1,47 @@
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+@media (min-width: 992px) {
+  .rounded-lg-3 {
+    border-radius: .3rem;
+  }
+}
+
+.therapy-structure {
+  padding: 40px 0;
+}
+
+.list-group-flush {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.list-group-item {
+  list-style: none;
+}
+
+.feature-box {
+  background-color: #fff;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.feature-box i {
+  margin-bottom: 1rem;
+}
+
+.feature-box h4 {
+  font-size: 1.2rem;
+}
+
+#basic-nav-dropdown{
+  color: white;
+}
+
