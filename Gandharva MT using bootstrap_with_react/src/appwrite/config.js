@@ -47,6 +47,8 @@ export class Service{
         }
     }  
 
+   
+
     async getalldocs(){
         try {
         const res =   await this.databases.listDocuments(
@@ -70,6 +72,24 @@ export class Service{
             
         }
     }
+
+    async get_patient_doc(name){
+        try {
+            const a = await this.databases.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                [Query.equal("name" , name.name )]
+            )
+            console.log(a);
+            console.log(a.documents[0].$id);
+            
+            return a.documents[0].$id;            
+
+        } catch (error) {
+            console.log("Appwrite serive :: get_patient_doc :: error", error);
+            
+        }
+       }
 
     async deletePost(slug){
         try {
@@ -107,6 +127,7 @@ export class Service{
 
     async updateAppointment( {Schedule_appointments , AppointmentID}){
         try {
+            console.log("I am inside update appointment");
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId_appointments,
@@ -115,6 +136,8 @@ export class Service{
                     Schedule_appointments
                 }
             )
+            
+            
         } catch (error) {
             console.log("Appwrite serive :: updatePost :: error", error);
         }
@@ -137,12 +160,13 @@ export class Service{
     }
 
     async get_appoint_data(UserId){
-
+        //   console.log(UserId);
+          
         try {
             const a = await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId_appointments,
-                [Query.equal("UserId" , UserId )]
+                [Query.equal("UserId" , UserId.UserId )]
             )
             console.log(a);
             console.log(a.documents[0].$id);
@@ -200,7 +224,7 @@ export class Service{
     }
 
     getFilePreview(ImgId){  
-        console.log(ImgId);
+        // console.log(ImgId);
         
         // {console.log(`getPreview fileId : ${fileId} `) }
         
@@ -231,17 +255,18 @@ export class Service{
         }
     }
 
-    async get_feedback_data(name){
-
+    async get_feedback_data(UserId){
+      console.log(UserId);
+      
         try {
             const a = await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId_feedback,
-                [Query.equal("UserId" , name.name )]
+                [Query.equal("UserId" , UserId.UserId )]
             )
             console.log(a); 
-            console.log(a.documents[0].Feedback) 
-            return String(a.documents[0].Feedback);
+            console.log(a.documents[1].Feedback) 
+            return String(a.documents[1].Feedback);
 
         } catch (error) {
             console.log(error);
