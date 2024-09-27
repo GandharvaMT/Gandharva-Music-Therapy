@@ -38,18 +38,26 @@
 
   .feature-box {
     background-color: #fff;
-    padding: 1.5rem; 
-    width: 100%; 
+    padding: 1.5rem;
+    width: 100%;
     text-align: center;
+    margin: auto; 
   }
-
+  
   .feature-box i {
     margin-bottom: 1rem;
   }
-
+  
   .feature-box h4 {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
+  
+  @media (max-width: 768px) {
+    .feature-box {
+      margin: 1.2rem auto;
+    }
+  }
+  
 
   body{
     background-color: #ede6e0c2 ;
