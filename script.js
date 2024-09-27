@@ -9,9 +9,12 @@ function showMore(feedbackId) {
 
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('registration-form');
+    const registerButton = form.querySelector('button[type="submit"]');
   
     form.addEventListener('submit', function(event) {
       event.preventDefault();  
+
+      registerButton.disabled = true;
   
       const formData = new FormData(form);
       const params = new URLSearchParams();
@@ -27,11 +30,14 @@ function showMore(feedbackId) {
       .then(data => {
         alert(data);
   
-        setTimeout(() => {
           form.reset();
-        }, 2000);
+          registerButton.disabled = false;
+
       })
-      .catch(error => console.error('Error:', error));
+      
+      .catch(error => {
+        registerButton.disabled = false;
+        console.error('Error:', error) });
     });
   });
   
