@@ -25,7 +25,7 @@ const IntroSection = () => {
           />
           <div className="text-center bg-body-tertiary">
             <Container style={{ paddingBottom: '40px' }}>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+              {/* <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
                 <NavLink to="/login">
                   <Button
                     variant="dark"
@@ -42,7 +42,7 @@ const IntroSection = () => {
                     Signup
                   </Button>
                 </NavLink>
-              </div>
+              </div> */}
               <Image
                 src={landingPageImage}
                 className="img-fluid rounded-start mt-4"

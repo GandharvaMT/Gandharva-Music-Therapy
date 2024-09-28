@@ -180,10 +180,16 @@ export default function Admin_Page() {
                   )}
                 </div>
               </div>
+              <Card.Title className="mt-4">{name}'s Therapy</Card.Title>
+              <Card.Text className="bg-light p-3 rounded">
+                {user_feedback !== "undefined" ? user_feedback : "No feedback given."}
+              </Card.Text>
+
               <Card.Title className="mt-4">{name}'s Feedback</Card.Title>
               <Card.Text className="bg-light p-3 rounded">
                 {user_feedback !== "undefined" ? user_feedback : "No feedback given."}
               </Card.Text>
+
             </Card.Body>
           </Card>
         </Col>
@@ -191,8 +197,4 @@ export default function Admin_Page() {
     </Container>
   );
 }
-
-
-
-
 

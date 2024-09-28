@@ -3,6 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../App.css'
+import { useNavigate } from 'react-router-dom';
+import Login from '../Components/Login';
 
 function Header() {
 
@@ -26,6 +28,7 @@ function Header() {
               <Nav.Link href="#benefits" className="text-white px-4">Benefits</Nav.Link>
               <Nav.Link href="#register" className="text-white px-4">Register</Nav.Link>
               <Nav.Link href="#foot" className="text-white px-4">Contact Us</Nav.Link>
+              <Nav.Link href="/login" className="text-white px-4">Login</Nav.Link>
             </Nav>
           </Navbar.Collapse>
       </Navbar>
