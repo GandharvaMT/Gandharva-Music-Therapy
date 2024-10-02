@@ -1,0 +1,13 @@
+.list-item {
+    list-style-type: disc; /* Adds a bullet point */
+  }
+  
+  .list-link {
+    color: #000; /* Default text color */
+    transition: color 0.3s ease;
+  }
+  
+  .list-link:hover {
+    color: #007bff; /* Blue color on hover */
+  }
+  

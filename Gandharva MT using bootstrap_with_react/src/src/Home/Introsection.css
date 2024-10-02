@@ -1,0 +1,17 @@
+.custom-button {
+    background-color: #343a40; /* Dark color */
+    border: none;
+  }
+  
+  .custom-button:hover {
+    background-color: #6c757d; /* Gray on hover */
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-button {
+      padding: 0.5rem 1rem;
+      font-size: 14px;
+    }
+  }
+  
